@@ -1,4 +1,4 @@
-package com.isd.threads;
+package com.isd.threads.collections;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -15,7 +15,7 @@ public class HashMapMultipleThreads {
                 try {
                     Thread.sleep(100); // Simulate some processing time
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
             }
         });
@@ -32,7 +32,7 @@ public class HashMapMultipleThreads {
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
             }
         });

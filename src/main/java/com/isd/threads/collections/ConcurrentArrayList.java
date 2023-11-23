@@ -1,4 +1,4 @@
-package com.isd.threads;
+package com.isd.threads.collections;
 
 import java.util.*;
 
