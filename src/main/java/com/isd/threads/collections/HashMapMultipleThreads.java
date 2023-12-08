@@ -28,7 +28,7 @@ public class HashMapMultipleThreads {
                 Map.Entry<String, Integer> entry = iterator.next();
                 System.out.println(entry.getKey() + ": " + entry.getValue());
 
-                // Simulate some processing time
+                // Some processing
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {

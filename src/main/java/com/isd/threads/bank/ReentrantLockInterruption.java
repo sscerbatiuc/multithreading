@@ -14,7 +14,6 @@ public class ReentrantLockInterruption {
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt(); // Preserve interrupted status
                 System.out.println("Thread was interrupted while waiting for the lock");
-                // Handle interruption, if needed
             } finally {
 
             }
@@ -23,7 +22,6 @@ public class ReentrantLockInterruption {
         lock.lock();
         waitingThread.start();
 
-        // Let the waiting thread start and be in a state of waiting
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {

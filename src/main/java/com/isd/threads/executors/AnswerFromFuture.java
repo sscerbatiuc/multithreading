@@ -22,6 +22,7 @@ public class AnswerFromFuture {
             throw new RuntimeException(e);
         }
 
-        executorService.shutdown();
+//        (!executorService.awaitTermination(60, TimeUnit.SECONDS))
+//        executorService.shutdownNow();
     }
 }

@@ -12,7 +12,7 @@ public class BankAccountWithReentrantLock extends BankAccount {
     }
 
     public void deposit(double amount) {
-        lock.lock();
+        lock.tryLock();
         try {
           super.deposit(amount);
         } finally {

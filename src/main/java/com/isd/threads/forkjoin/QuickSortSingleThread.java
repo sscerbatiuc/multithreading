@@ -14,7 +14,7 @@ public class QuickSortSingleThread {
 
     public static void main(String[] args) {
         int[] array = generateRandomArray(10000000); // Adjust the size as needed
-        System.out.println("Original array: " + Arrays.toString(array));
+//        System.out.println("Original array: " + Arrays.toString(array));
 
         // measure the execution time
         long startTime = System.currentTimeMillis();
@@ -22,7 +22,7 @@ public class QuickSortSingleThread {
         long endTime = System.currentTimeMillis();
         long duration = (endTime - startTime);  // In milliseconds
 
-        System.out.println("Sorted array: " + Arrays.toString(array));
+//        System.out.println("Sorted array: " + Arrays.toString(array));
         System.out.println("Duration: " + duration + " milliseconds");
     }
 

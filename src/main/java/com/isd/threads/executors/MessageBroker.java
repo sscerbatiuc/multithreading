@@ -1,9 +1,6 @@
 package com.isd.threads.executors;
 
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.*;
 
 public class MessageBroker {
     private final BlockingQueue<String> messageQueue;
@@ -45,7 +42,7 @@ public class MessageBroker {
 
     public void stop() throws InterruptedException {
         // Oracle recommends this approach for stopping executors
-        if (!executorService.awaitTermination(10, java.util.concurrent.TimeUnit.SECONDS)) {
+        if (!executorService.awaitTermination(10, TimeUnit.SECONDS)) {
             executorService.shutdownNow();
         }
     }
@@ -62,7 +59,6 @@ class Demo {
         for (int i = 0; i < 50; i++) {
             messageBroker.sendMessage("Message " + i);
         }
-
 
         // Stop the message broker
         messageBroker.stop();

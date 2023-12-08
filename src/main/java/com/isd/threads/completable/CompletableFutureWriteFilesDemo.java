@@ -25,7 +25,6 @@ public class CompletableFutureWriteFilesDemo {
         // Combine results from all CompletableFuture tasks
         CompletableFuture<Void> allOf = CompletableFuture.allOf(writeTask1, writeTask2, writeTask3);
 
-        // Wait for all tasks to complete
         try {
             allOf.get(); // This blocks until all CompletableFuture tasks are complete
             System.out.println("Data has been written to the file successfully.");
@@ -34,9 +33,7 @@ public class CompletableFutureWriteFilesDemo {
         }
     }
 
-    // Simulated method to write data to a text file (replace with your actual logic)
     private static void writeToTextFile(String filePath, String data) {
-        // Write data to the file using Files.write
         try {
             Files.write(Paths.get(filePath), data.getBytes(), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
             System.out.println("Data has been written to the file successfully.");
